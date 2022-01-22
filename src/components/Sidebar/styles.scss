@@ -5,9 +5,9 @@
   position: sticky;
   top: 60px;
   left: 0;
-  width: 20%;
   color: $text-color;
   padding: 16px;
+  margin-left: 16px;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   @include flex("", space-between);
@@ -22,11 +22,15 @@
     @include flex(center);
 
     &.active {
-      background-color: #8d979744;
+      background-color: $main-color;
     }
 
     .title {
       margin-left: 16px;
+
+      @include tablet {
+        display: none;
+      }
     }
   }
 }

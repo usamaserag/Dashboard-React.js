@@ -1,4 +1,5 @@
 @use './scss/helper' as *;
+
 body {
   background-color: $white-smoke;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,7 +16,7 @@ body {
 }
 .container {
   max-width: 1224px;
-  margin: 16px auto;
+  margin: $m-b auto;
   display: flex;
 }
 

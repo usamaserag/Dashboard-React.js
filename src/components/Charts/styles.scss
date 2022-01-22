@@ -1,0 +1,10 @@
+@use '../../scss/helper' as *;
+
+.charts {
+    margin-top: $m-b;
+
+    &__title {
+        margin-bottom: $m-b;
+        font-weight: 600;
+    }
+}
