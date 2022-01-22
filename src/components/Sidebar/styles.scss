@@ -1,0 +1,32 @@
+@use "../../scss/helper" as *;
+
+.sidebar {
+  height: calc(100vh - 92px);
+  position: sticky;
+  top: 60px;
+  left: 0;
+  width: 20%;
+  color: $text-color;
+  padding: 16px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  @include flex("", space-between);
+  flex-direction: column;
+  background-color: white;
+
+  &__item {
+    padding: 4px 16px;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    @include flex(center);
+
+    &.active {
+      background-color: #8d979744;
+    }
+
+    .title {
+      margin-left: 16px;
+    }
+  }
+}

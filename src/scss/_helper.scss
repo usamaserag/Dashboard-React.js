@@ -1,27 +1,51 @@
 $main-color: #26baee;
 $hover-color: #9fe8fa;
 $text-color: #454545;
-$white-smoke: 	#f5f5f5;
-
-$border-radius: 30px;
+$white-smoke: #f5f5f5;
+$gray-color: #8d9797;
+$border-radius: 10px;
+$box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 
 $mobile-width: 600px;
 $tablet-width: 1024px;
 
 @mixin flex($align-items: "", $justify-content: "") {
-    display: flex;
-    align-items: $align-items;
-    justify-content: $justify-content;
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
 
 @mixin mobile {
-    @media only screen and (max-width: $mobile-width) {
-        @content;
-    }
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media only screen and (max-width: $tablet-width) {
-        @content;
-    }
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+.hover-effect {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease;
+
+  &::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
+    padding-top: 100%;
+    left: -50%;
+    top: 0;
+    background: linear-gradient(to top right, #8d979700, #8d979777);
+    transform: scale(0);
+    transition: transform 0.7s ease;
+  }
+
+  &:hover::before {
+    transform: scale(3);
+  }
 }
